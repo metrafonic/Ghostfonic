@@ -1,0 +1,94 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<main class="content" role="main">
+
+    <article class="{{post_class}}" role="article" itemscope itemtype="http://schema.org/Article">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+	
+	<section itemprop="articleSection" class="post-content">
+        {{#if image}}
+        <div class="image-wrapper">
+            <img src="{{image}}" class="post-image"/><br>
+        </div>
+        {{/if}}
+        </section>
+	
+        {{! Everything below outputs content of the the post which has been published }}
+        <h2 itemprop="name" class="post-title">{{title}}</h2>
+		
+        <span class="post-meta"><time itemprop="datePublished" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time> {{#if tags}} | Tags: {{tags}}{{/if}}</span>
+
+        <section itemprop="articleSection" class="post-content">
+            {{content}}
+        </section>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Met1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2214789606556003"
+     data-ad-slot="7815862939"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="post-footer">
+
+             {{#if author}}
+        <footer class="postfooter_uber">
+        <address itemscope itemtype="http://schema.org/Person">
+        {{#if author.image}}
+        <!--<div class="authorimage_uber"><img src="{{author.image}}" itemprop="image" /></div>-->
+        {{/if}}
+        <h4 class="authorname_uber"><span itemprop="name">{{author.name}}</span></h4>
+        {{#if author.website}}
+        <div class="authorwebsite_uber"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+        {{/if}}
+        </address>
+        <div class="authorbio_uber">
+        <p>{{author.bio}}</p>
+        </div>
+        </footer>
+        {{/if}}
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+        {{/post}}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'metrafonic';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>    
+    
+    </article> </main>

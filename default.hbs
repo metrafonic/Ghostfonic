@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
+<html>
+<head>
+<meta name="google-site-verification" content="j0CBi10p32NM66Mu15eXIM50OMPtH2JvG5EBgXQyj84" />
+    {{! Document Settings }}
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="{{asset "css/highlight/styles/default.css"}}">
+    <script type="text/javascript" src="{{asset "css/highlight/highlight.pack.js"}}"></script>
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+<a href="https://plus.google.com/+MetrafonicMedia/" rel="publisher" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48207709-1', 'metrafonic.com');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body class="{{body_class}}">
+
+    {{! Modified: The big featured header on the homepage, with the site logo and description }}
+    <header id="site-head">
+        <div class="vertical">
+            <div id="site-head-content">
+		
+                <div class="blog-title-wrap" style="background-image: url({{@blog.cover}});height:100px"><div class="inner">
+                {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+                <h1 class="blog-title"><a href="https://metrafonic.com/" style="color: rgb(51, 51, 51);">{{@blog.title}}</a></h1><br>{{@blog.description}} 
+
+                </div></div>
+				
+                <div class="blog-description-wrap"><div class="inner">
+		{{navigation}}		
+		<h3 class="blog-description"></h3>
+                </div>
+				</div>
+				<div style="background-image: url({{@blog.cover}}); height:0px"></div>
+				
+				
+            </div>
+        </div>
+
+    </header>
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+	
+
+    <footer class="site-footer inner">
+        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2014 &bull; All rights reserved.</section>
+             
+        </div>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/fitvids.js"}}"></script>
+    <script>
+        $(document).ready(function(){
+            // Target your .container, .wrapper, .post, etc.
+            $(".post-content").fitVids();
+        });
+    </script>
+    {{! Mathjax configuration}}
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="text/x-mathjax-config">  
+        MathJax.Hub.Config({  
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>  
+</body>
+</html>
