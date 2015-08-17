@@ -45,14 +45,14 @@
         <div class="vertical">
             <div id="site-head-content">
 		
-                <div class="blog-title-wrap" style="background-image: url({{@blog.cover}});height:100px"><div class="inner">
+                <div class="blog-title-wrap" style="background-image: url({{@blog.cover}}) center;"><div class="inner">
                 {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
                 <h1 class="blog-title"><a href="https://metrafonic.com/" style="color: rgb(51, 51, 51);">{{@blog.title}}</a></h1><br>{{@blog.description}} 
 
                 </div></div>
 				
                 <div class="blog-description-wrap"><div class="inner">
-		{{navigation}}		
+		<a href="/">Home</a> {{navigation}}		
 		<h3 class="blog-description"></h3>
                 </div>
 				</div>
